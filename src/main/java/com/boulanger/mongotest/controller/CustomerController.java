@@ -16,8 +16,8 @@ public class CustomerController {
     private CustomersRepository customersRepository;
 
     @RequestMapping("/customer")
-    public @ResponseBody List<Customer> getCustomers() {
-        
+    public @ResponseBody
+    List<Customer> getCustomers() {
         return null;
     }
 }

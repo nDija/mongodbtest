@@ -9,27 +9,27 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class CustomerRepositoryTests {
 
-	@Autowired
-	public CustomersRepository customerRepository;
+    @Autowired
+    public CustomersRepository customerRepository;
 
-	@Test
-	void shouldBeSavedCustomer() {
-		Customer customer = new Customer("Jo","Exotic", "jo.exotic@gmail.com");
-		customerRepository.save(customer);
-		Customer customerFromDB = customerRepository.findByeMail("jo.exotic@gmail.com");
-		Assertions.assertEquals(customerFromDB.toString(), customer.toString());
-	}
+    @Test
+    void shouldBeSavedCustomer() {
+        Customer customer = new Customer("Jo", "Exotic", "jo.exotic@gmail.com");
+        customerRepository.save(customer);
+        Customer customerFromDB = customerRepository.findByeMail("jo.exotic@gmail.com");
+        Assertions.assertEquals(customerFromDB.toString(), customer.toString());
+    }
 
-	@Test
-	void shouldCustomerFieldsNotNull (){
-		Customer c;
-		try {
-			c = new Customer(null, null, null);
-		}catch(NullPointerException e) {
-			Assertions.assertTrue(true);
-			return;
-		}
-		Assertions.assertTrue(false);
-	}
+    @Test
+    void shouldCustomerFieldsNotNull() {
+        Customer c;
+        try {
+            c = new Customer(null, null, null);
+        } catch (NullPointerException e) {
+            Assertions.assertTrue(true);
+            return;
+        }
+        Assertions.assertTrue(false);
+    }
 
 }
