@@ -10,10 +10,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class CustomerRepositoryTests {
 
     @Autowired
-    public CustomersRepository customerRepository;
+    public CustomerRepository customerRepository;
 
     @Test
     void shouldBeSavedCustomer() {
+        customerRepository.deleteAll();
         Customer customer = new Customer("Jo", "Exotic", "jo.exotic@gmail.com");
         customerRepository.save(customer);
         Customer customerFromDB = customerRepository.findByeMail("jo.exotic@gmail.com");
