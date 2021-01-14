@@ -19,4 +19,17 @@ public class CustomerRepositoryTests {
 		Customer customerFromDB = customerRepository.findByeMail("jo.exotic@gmail.com");
 		Assertions.assertEquals(customerFromDB.toString(), customer.toString());
 	}
+
+	@Test
+	void shouldCustomerFieldsNotNull (){
+		Customer c;
+		try {
+			c = new Customer(null, null, null);
+		}catch(NullPointerException e) {
+			Assertions.assertTrue(true);
+			return;
+		}
+		Assertions.assertTrue(false);
+	}
+
 }

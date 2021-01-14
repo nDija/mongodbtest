@@ -17,7 +17,7 @@ public class CustomerController {
 
     @RequestMapping("/customer")
     public @ResponseBody List<Customer> getCustomers() {
-        customersRepository.save(new Customer("Vincent", "Hullaert", "vincent@hullaert.io"));
+        
         return null;
     }
 }
